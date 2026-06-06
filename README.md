@@ -101,16 +101,13 @@ Maintainer-Bot is designed for transparent OSS workflows:
 - maintainers should avoid enabling AI-assisted mode for repositories that may
   expose secrets in diffs or issue bodies.
 
-See [docs/privacy-and-security.md](docs/privacy-and-security.md) for details.
-
 ## Local Development
 
 ```bash
-npm test
 npm run lint
 ```
 
-The project uses Node.js 20 and the built-in `node:test` runner.
+The project uses Node.js 20 and has no runtime npm dependencies.
 
 ## Roadmap
 

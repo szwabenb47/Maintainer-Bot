@@ -6,7 +6,7 @@
 - [x] Rule-based pull request review summaries.
 - [x] Rule-based release checklist.
 - [x] Optional OpenAI API summaries.
-- [x] CI and tests.
+- [x] CI syntax checks.
 
 ## Next
 
