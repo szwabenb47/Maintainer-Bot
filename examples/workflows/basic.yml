@@ -1,0 +1,23 @@
+name: Maintainer Bot
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  assist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: szwabenb47/Maintainer-Bot@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          dry-run: "true"
+          post-comment: "false"

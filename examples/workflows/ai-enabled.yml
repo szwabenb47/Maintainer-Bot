@@ -1,0 +1,26 @@
+name: Maintainer Bot AI Assisted
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  release:
+    types: [published, edited]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  assist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: szwabenb47/Maintainer-Bot@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          dry-run: "false"
+          post-comment: "true"
